@@ -1,4 +1,4 @@
-name: Build and deploy Python app to Azure Web App - todoapp
+name: Build and deploy Python app to Azure Web App - test1-python-app
 
 on:
   push:
@@ -61,14 +61,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E22F735DE7A74FD195CF30C6D7C3EE49 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_662FE9BFE9FD4E03B5EE20A738CE7BBA }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_679A035EE9D1429D976826DC45B00E27 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_34b4abfb-6f39-4939-a619-93d403da7ee7 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_885a1434-5b2b-4f6a-82f3-c855099d7abd }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1b07d375-e28d-4dd8-9a73-6e18dd9f7b3c }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'todoapp'
+          app-name: 'test1-python-app'
           slot-name: 'Production'
           startup-command: './startup.sh'
